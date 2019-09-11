@@ -10,60 +10,60 @@ namespace LoopAndIterationExercise
     {
         static void Main(string[] args)
         {
-            // 1. Create an array, ask user to input a string. Use loop to add user input to each element in the array.
-            string[] addToArray = new string[] { "1: ", "2: ", "3: ", "4: ", "5: " };
-            Console.WriteLine("Please type something, anything at all: ");
-            string userInput1 = Console.ReadLine();
+            //// 1. Create an array, ask user to input a string. Use loop to add user input to each element in the array.
+            //string[] addToArray = new string[] { "1: ", "2: ", "3: ", "4: ", "5: " };
+            //Console.WriteLine("Please type something, anything at all: ");
+            //string userInput1 = Console.ReadLine();
 
-            for (int i = 0; i < addToArray.Length; i++)
-            {
-                addToArray[i] = addToArray[i] + userInput1;
-                Console.WriteLine(addToArray[i]);
-            }
-            Console.ReadLine();
-
-
-
-
-
-            //2. Create an infinite loop
-            for (int j = 1; j > 0; j++)
-            {
-                Console.WriteLine(j);
-            }
+            //for (int i = 0; i < addToArray.Length; i++)
+            //{
+            //    addToArray[i] = addToArray[i] + userInput1;
+            //    Console.WriteLine(addToArray[i]);
+            //}
+            //Console.ReadLine();
 
 
 
 
 
-            //3. Fix the infinite loop so it will execute
-            for (int k = 1; k <= 10; k++)
-            {
-                Console.WriteLine(k);
-            }
-            Console.Read();
+            //////2. Create an infinite loop
+            ////for (int j = 1; j > 0; j++)
+            ////{
+            ////    Console.WriteLine(j);
+            ////}
 
 
 
 
 
-            //4. Create a loop that uses a "<" comparison to determine whether to continue the loop or not.
-            for (int l = 0; l < 20; l += 2)
-            {
-                Console.WriteLine(l);
-            }
-            Console.Read();
+            ////3. Fix the infinite loop so it will execute
+            //for (int k = 1; k <= 10; k++)
+            //{
+            //    Console.WriteLine(k);
+            //}
+            //Console.Read();
 
 
 
 
 
-            //5. Same as "4." but use a "<=" operator
-            for (int m = 0; m <= 20; m += 2)
-            {
-                Console.WriteLine(m);
-            }
-            Console.Read();
+            ////4. Create a loop that uses a "<" comparison to determine whether to continue the loop or not.
+            //for (int l = 0; l < 20; l += 2)
+            //{
+            //    Console.WriteLine(l);
+            //}
+            //Console.Read();
+
+
+
+
+
+            ////5. Same as "4." but use a "<=" operator
+            //for (int m = 0; m <= 20; m += 2)
+            //{
+            //    Console.WriteLine(m);
+            //}
+            //Console.Read();
 
 
 
