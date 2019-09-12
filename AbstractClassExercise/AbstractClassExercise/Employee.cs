@@ -17,5 +17,16 @@ namespace AbstractClassExercise
         {
             Console.WriteLine("{0} {1} has left the building.", FirstName, LastName);
         }
+
+        public static bool operator== (Employee e1, Employee e2) //Overloading operator
+        {
+            return e1.Id == e2.Id;
+        }
+        public static bool operator!= (Employee e1, Employee e2) // Overloading operator
+        {
+            return e1.Id != e2.Id;
+        }
+
+        public int Id { get; set; }
     }
 }
