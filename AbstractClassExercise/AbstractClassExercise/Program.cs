@@ -12,6 +12,11 @@ namespace AbstractClassExercise
         {
             Employee employee1 = new Employee() { FirstName = "Sample", LastName = "Student" };
             employee1.SayName();
+            employee1.Quit();
+
+            IQuittable employee2 = new Employee() { FirstName = "Example", LastName = "Employee" };
+            employee2.Quit();
+
             Console.ReadLine();
         }
     }
