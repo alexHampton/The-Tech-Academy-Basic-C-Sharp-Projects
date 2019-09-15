@@ -11,23 +11,17 @@ namespace TwentyOne_ClassesAndObjects
         public Deck()
         {
             Cards = new List<Card>();
-            List<string> Suits = new List<string>() { "Hearts", "Diamonds", "Spades", "Clubs" };
-            List<string> Faces = new List<string>()
-            {
-                "Two", "Three", "Four", "Five", "Six", "Seven",
-                "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace"
-            };
 
-            //foreach (string suit in Suits)
-            //{
-            //    foreach (string face in Faces)
-            //    {
-            //        Card card = new Card();
-            //        card.Suit = suit;
-            //        card.Face = face;
-            //        Cards.Add(card);
-            //    }
-            //}
+            for(int i = 0; i < 13; i++) // For each face value...
+            {
+                for(int j = 0; j < 4; j++) // For each suit value...
+                {
+                    Card card = new Card();
+                    card.Face = (Face)i; // Convert i to Face enum value.
+                    card.Suit = (Suit)j; // Convert j to Suit enum value.
+                    Cards.Add(card); // Add card to Deck of Cards.
+                }
+            }            
         }
         public List<Card> Cards { get; set; }
 

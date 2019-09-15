@@ -10,14 +10,14 @@ namespace TwentyOne_ClassesAndObjects
     {
         static void Main(string[] args)
         {
-            Card card = new Card();
-            card.Suit = Suit.Clubs;
+            Card card1 = new Card();
+            Card card2 = card1;
+            card1.Face = Face.Eight;
+            card2.Face = Face.King;
+            Console.WriteLine(card1.Face);
 
-            int underlyingValue = (int)Suit.Hearts;
-            Console.WriteLine(underlyingValue);
-
-            Deck deck = new Deck();
-            deck.Shuffle(3);
+            //Deck deck = new Deck();
+            //deck.Shuffle(3);
 
             //foreach (Card card in deck.Cards)
             //{
@@ -27,12 +27,13 @@ namespace TwentyOne_ClassesAndObjects
             Console.Read();
 
 
+
             //Game game = new TwentyOneGame();
             //game.Players = new List<Player>();
             //    Player player = new Player() { Name = "Alex" };
             //game += player;
             //    game -= player;
-            
+
 
             //// Overload method
             //public static Deck Shuffle(Deck deck, int times)
