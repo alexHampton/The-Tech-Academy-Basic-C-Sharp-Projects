@@ -10,18 +10,26 @@ namespace TwentyOne_ClassesAndObjects
     {
         static void Main(string[] args)
         {
-            Deck deck = new Deck();
-            
-            //deck.Shuffle(3);
-
-            //foreach (Card card in deck.Cards)
-            //{
-            //    Console.WriteLine(card.Face + " of " + card.Suit);
-            //}
-            //Console.WriteLine("Total card count: " + deck.Cards.Count);
-
-
-
+            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
+            string playerName = Console.ReadLine();
+            Console.WriteLine("And how much money did you bring today?");
+            int bank = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
+            string answer = Console.ReadLine().ToLower();
+            if (answer == "yes" || answer == "yeah" || answer == "sure" || answer == "y" || answer == "ya")
+            {
+                Player player = new Player(playerName, bank); // Create a new Player Object using the name and money the user inputted.
+                Game game = new TwentyOneGame(); // polymorphism so that we can use those overloaded properties.
+                game += player;
+                player.IsActivelyPlaying = true;
+                while (player.IsActivelyPlaying && player.Balance > 0)
+                {
+                    game.Play(); // Set this to play one hand. After that, check to see if the player wants to continue playing. If so, continue While loop.
+                }
+                game -= player;
+                Console.WriteLine("Thank you for playing!");
+            }
+            Console.WriteLine("Feel free to look around the casino. Bye for now.");
             Console.Read();
 
 
@@ -61,15 +69,15 @@ namespace TwentyOne_ClassesAndObjects
             //}
         }
 
-        public enum DaysOfTheWeek
-        {
-            Monday,
-            Tuesday,
-            Wednesday,
-            Thursday,
-            Friday,
-            Saturday,
-            Sunday
-        }
+        //public enum DaysOfTheWeek
+        //{
+        //    Monday,
+        //    Tuesday,
+        //    Wednesday,
+        //    Thursday,
+        //    Friday,
+        //    Saturday,
+        //    Sunday
+        //}
     }
 }

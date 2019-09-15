@@ -10,8 +10,8 @@ namespace TwentyOne_ClassesAndObjects
     {
         public List<Player> Players { get; set; }
         public string Name { get; set; }
-        public string Dealer { get; set; }
-
+        public Dictionary<Player, int> Bets { get; set; }
+        
 
         // Abstract method.
         public abstract void Play(); // Any class inheriting this class (Game) must implement this method.
