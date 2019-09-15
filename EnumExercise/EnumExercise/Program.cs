@@ -13,21 +13,27 @@ namespace EnumExercise
             try
             {
                 Console.WriteLine("Please enter the current day of the week: ");
-                string userString = Console.ReadLine().ToLower();
-                Console.WriteLine();
-                Enum.Parse(typeof(DaysOfTheWeek), userString); //Check to see if user input is found in Enum.
-                
 
-                DaysOfTheWeek userInputEnum; //Declare enum.
-                for (int i = 0; i < 7; i++) //use For Loop to find which enum value the user input matches.
-                {
-                    if (userString == GetDayName(i))
-                    {
-                        userInputEnum = (DaysOfTheWeek)i;
-                        Console.WriteLine("The day you entered, as an Enum data type, is: ");
-                        Console.WriteLine(userInputEnum);
-                    }
-                }
+                DaysOfTheWeek day = (DaysOfTheWeek)Enum.Parse(typeof(DaysOfTheWeek), Console.ReadLine(), true); // Use true boolean to ignore case.
+                Console.WriteLine("You put in " + day);
+
+
+
+                //string userString = Console.ReadLine().ToLower();
+                //Console.WriteLine();
+                //Enum.Parse(typeof(DaysOfTheWeek), userString); //Check to see if user input is found in Enum.
+
+
+                //DaysOfTheWeek userInputEnum; //Declare enum.
+                //for (int i = 0; i < 7; i++) //use For Loop to find which enum value the user input matches.
+                //{
+                //    if (userString == GetDayName(i))
+                //    {
+                //        userInputEnum = (DaysOfTheWeek)i;
+                //        Console.WriteLine("The day you entered, as an Enum data type, is: ");
+                //        Console.WriteLine(userInputEnum);
+                //    }
+                //}
             }
             catch (Exception)
             {
@@ -44,13 +50,13 @@ namespace EnumExercise
 
         public enum DaysOfTheWeek
         {
-            sunday,
-            monday,
-            tuesday,
-            wednesday,
-            thursday,
-            friday,
-            saturday
+            Sunday,
+            Monday,
+            Tuesday,
+            Wednesday,
+            Thursday,
+            Friday,
+            Saturday
         }
     }
 }
