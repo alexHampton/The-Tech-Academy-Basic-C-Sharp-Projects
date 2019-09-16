@@ -8,8 +8,12 @@ namespace TwentyOne_ClassesAndObjects
 {
     public struct Card
     {
-        public Suit Suit { get; set; }
+        public Suit Suit { get; set; } // Each card has a state of Suit and Face, both of which are enumerables as defined below.
         public Face Face { get; set; }
+        public override string ToString() // Override ToString() for Card class.
+        {
+            return string.Format("{0} of {1}", Face, Suit);
+        }
     }
     public enum Suit
     {

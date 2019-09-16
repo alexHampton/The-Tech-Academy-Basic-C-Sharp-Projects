@@ -10,7 +10,7 @@ namespace TwentyOne_ClassesAndObjects
     {
         public Deck()
         {
-            Cards = new List<Card>();
+            Cards = new List<Card>(); // Deck class has a Cards Obj, which is a List made up of Card Objects.
 
             for(int i = 0; i < 13; i++) // For each face value...
             {

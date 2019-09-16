@@ -9,13 +9,14 @@ namespace TwentyOne_ClassesAndObjects
 
     public class Player
     {
-        public Player(string name, int beginningBalance)
+        public Player(string name, int beginningBalance) // To construct a Player object, give a name and a beginning balance.
         {
             Hand = new List<Card>();
             Balance = beginningBalance;
             Name = name;
         }
-        public List<Card> Hand { get; set; }
+        private List<Card> _hand = new List<Card>();
+        public List<Card> Hand { get { return _hand; } set{ _hand = value; } }
         public int Balance { get; set; }
         public string Name { get; set; }
         public bool IsActivelyPlaying { get; set; }
@@ -30,7 +31,7 @@ namespace TwentyOne_ClassesAndObjects
             }
             else
             {
-                Balace -= amount;
+                Balance -= amount;
                 return true;
             }
         }
