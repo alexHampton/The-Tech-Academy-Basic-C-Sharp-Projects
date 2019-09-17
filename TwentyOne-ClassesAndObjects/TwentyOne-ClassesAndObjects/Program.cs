@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Casino;
 using Casino.TwentyOne;
@@ -9,9 +10,15 @@ namespace TwentyOne_ClassesAndObjects
     {
         static void Main(string[] args)
         {
+            var playerNum1 = new Player();
+            const string theGreatestPlayerEver = "Number 1";
+            var newPlayer = new Player("Alex");
+            var newDictionary = new Dictionary<string, string>();
+            const string casinoName = "Grand Hotel and Casino";
+
             
 
-            Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
+            Console.WriteLine("Welcome to the {0}. Let's start by telling me your name.", casinoName);
             string playerName = Console.ReadLine(); // Used to create instance of player class.
             Console.WriteLine("And how much money did you bring today?");
             int bank = Convert.ToInt32(Console.ReadLine()); // used to create instance of player class.
@@ -20,6 +27,11 @@ namespace TwentyOne_ClassesAndObjects
             if (answer == "yes" || answer == "yeah" || answer == "sure" || answer == "y" || answer == "ya")
             {
                 Player player = new Player(playerName, bank); // Create a new Player Object using the name and money the user inputted.
+                player.Id = Guid.NewGuid();
+                using (StreamWriter file = new StreamWriter(@"C:\Users\alext\OneDrive\Documents\GitHub\The-Tech-Academy-Basic-C-Sharp-Projects\Logs\log.txt", true))
+                {
+                    file.WriteLine(player.Id);
+                }
                 Game game = new TwentyOneGame(); // polymorphism so that we can use those overloaded operation properties.
                 game += player;
                 player.IsActivelyPlaying = true;
