@@ -20,8 +20,17 @@ namespace TwentyOne_ClassesAndObjects
 
             Console.WriteLine("Welcome to the {0}. Let's start by telling me your name.", casinoName);
             string playerName = Console.ReadLine(); // Used to create instance of player class.
-            Console.WriteLine("And how much money did you bring today?");
-            int bank = Convert.ToInt32(Console.ReadLine()); // used to create instance of player class.
+
+            // Handles Format Exception
+            bool validAnswer = false;
+            int bank = 0;
+            while (!validAnswer || bank <= 0) 
+            {
+                Console.WriteLine("And how much money did you bring today?");
+                validAnswer = Int32.TryParse(Console.ReadLine(), out bank); // output only happens if TryParse succeeds.
+                if (!validAnswer || bank <= 0) Console.WriteLine("Please enter digits greater than 0 only, no decimals.");
+            }
+
             Console.WriteLine("Hello, {0}. Would you like to join a game of 21 right now?", playerName);
             string answer = Console.ReadLine().ToLower();
             if (answer == "yes" || answer == "yeah" || answer == "sure" || answer == "y" || answer == "ya")
@@ -37,7 +46,22 @@ namespace TwentyOne_ClassesAndObjects
                 player.IsActivelyPlaying = true;
                 while (player.IsActivelyPlaying && player.Balance > 0)
                 {
-                    game.Play(); // Set this to play one hand. After that, check to see if the player wants to continue playing. If so, continue While loop.
+                    try
+                    {
+                        game.Play(); // Set this to play one hand. After that, check to see if the player wants to continue playing. If so, continue While loop.
+                    }
+                    catch (FraudException ex)
+                    {
+                        Console.WriteLine("You're trying to cheat the system! Security! Kick this person out!");
+                        Console.ReadLine();
+                        return;
+                    }
+                    catch (Exception)
+                    {
+                        Console.WriteLine("An error occurred. Please contact your System Administrator.");
+                        Console.ReadLine();
+                        return;
+                    }
                 }
                 game -= player;
                 Console.WriteLine("Thank you for playing!");
