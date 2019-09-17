@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TwentyOne_ClassesAndObjects
+namespace Casino
 {
     public abstract class Game //Abstract class: Would never be instantiated. Makes it impossible for class to be used as an object.
     {

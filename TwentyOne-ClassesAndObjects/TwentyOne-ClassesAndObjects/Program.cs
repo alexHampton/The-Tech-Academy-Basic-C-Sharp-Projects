@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using Casino;
+using Casino.TwentyOne;
 
 namespace TwentyOne_ClassesAndObjects
 {
@@ -11,13 +9,7 @@ namespace TwentyOne_ClassesAndObjects
     {
         static void Main(string[] args)
         {
-
-
-            DateTime yearOfBirth = new DateTime(1995, 5, 23, 8, 32, 45); // Multiple overloads
-            DateTime yearOfGraduation = new DateTime(2013, 6, 1, 16, 34, 22);
-
-            TimeSpan ageAtGraduation = yearOfGraduation - yearOfBirth;
-            Console.WriteLine(yearOfGraduation <= yearOfBirth);
+            
 
             Console.WriteLine("Welcome to the Grand Hotel and Casino. Let's start by telling me your name.");
             string playerName = Console.ReadLine(); // Used to create instance of player class.
@@ -59,7 +51,7 @@ namespace TwentyOne_ClassesAndObjects
             //{
             //    Console.WriteLine(card.Face + " of " + card.Suit);
             //}
-                                          
+
             //Game game = new TwentyOneGame();
             //game.Players = new List<Player>();
             //    Player player = new Player() { Name = "Alex" };
@@ -76,6 +68,13 @@ namespace TwentyOne_ClassesAndObjects
             //    }
             //    return deck;
             //}
+
+            //// DateTime Practice
+            //DateTime yearOfBirth = new DateTime(1995, 5, 23, 8, 32, 45); // Multiple overloads
+            //DateTime yearOfGraduation = new DateTime(2013, 6, 1, 16, 34, 22);
+
+            //TimeSpan ageAtGraduation = yearOfGraduation - yearOfBirth;
+            //Console.WriteLine(yearOfGraduation <= yearOfBirth);
         }
 
         //public enum DaysOfTheWeek
