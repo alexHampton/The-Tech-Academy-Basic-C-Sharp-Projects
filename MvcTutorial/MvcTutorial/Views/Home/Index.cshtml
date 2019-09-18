@@ -1,0 +1,30 @@
+﻿@*@using System.Collections.Generic
+@model List<string>
+
+@foreach(var name in Model)
+{
+    <h1>
+        @name
+    </h1>
+}*@
+
+@*@model int
+
+<h1>
+    @Model
+</h1>*@
+
+@model MvcTutorial.Models.User
+
+<h1>
+    @Model.Id
+</h1>
+<h1>
+    @Model.FirstName
+</h1>
+<h1>
+    @Model.LastName
+</h1>
+<h1>
+    @Model.Age
+</h1>
