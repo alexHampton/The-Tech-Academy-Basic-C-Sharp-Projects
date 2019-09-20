@@ -158,6 +158,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\Car_Insurance_Quote.mdf" />
+    <Content Include="App_Data\Car_Insurance_Quote_log.ldf">
+      <DependentUpon>Car_Insurance_Quote.mdf</DependentUpon>
+    </Content>
     <Content Include="App_Data\readme.txt" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
