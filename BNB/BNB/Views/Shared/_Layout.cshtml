@@ -8,15 +8,22 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="container">
-        <div class="">
-            <ul class="nav navbar-nav row">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("About", "About", "Home")</li>
-                <li>@Html.ActionLink("Reservations", "Index", "Customer")</li>
-            </ul>
+    <nav class="container mb-5 navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Country Bed & Breakfasts</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="../Home">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="../Home/About">About</a>
+                <a class="nav-item nav-link" href="../Customer">Reservations</a>
+                <a class="nav-item nav-link" href="../Admin">Admin</a>
+            </div>
         </div>
-    </div>
+    </nav>
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />

@@ -13,7 +13,9 @@ namespace BNB.DAL
         // Name of the connection string
         public BedAndBreakfastContext() : base("BedAndBreakfastContext")
         {
-            Database.SetInitializer(new BedAndBreakfastInitializer());
+            // Was used to try to Initialize Bnbs Table with default data. 
+            // Didn't work.
+            //Database.SetInitializer(new BedAndBreakfastInitializer());
         }
         
         // Entity Sets (DB Tables)
