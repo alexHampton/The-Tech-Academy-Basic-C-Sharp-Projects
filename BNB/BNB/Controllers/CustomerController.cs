@@ -22,6 +22,17 @@ namespace BNB.Controllers
         {
             using (BedAndBreakfastContext db = new BedAndBreakfastContext())
             {
+                // This was used to initialize BNBs once when the program ran. 
+                // Now that they are created, this code is no longer needed.
+                //var defaultbnb1 = new Bnb() { Name = "Country Gardens", Address = "4236 Garden Path" };
+                //var defaultbnb2 = new Bnb() { Name = "Country Roads", Address = "12 Main Street" };
+                //var defaultbnb3 = new Bnb() { Name = "Country Hills", Address = "1 Private Way" };
+
+                //db.Bnbs.Add(defaultbnb1);
+                //db.Bnbs.Add(defaultbnb2);
+                //db.Bnbs.Add(defaultbnb3);
+                //db.SaveChanges();
+
                 var customer = new Customer();
                 customer.FirstName = firstName;
                 customer.LastName = lastName;
