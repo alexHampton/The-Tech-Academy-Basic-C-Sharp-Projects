@@ -8,18 +8,25 @@ namespace ContosoUniversity.DAL
 {
     public class SchoolContext : DbContext //SchoolContext is our DB.
     {
-        public SchoolContext() : base("SchoolContext") //Specify name of the connection string. If not explicitly stated, it will take the name of the class (SchoolContext).
-        {
-        }
-
         // Each DbSet corresponds to a Table within the DB.
-        public DbSet<Student> Students { get; set; } // Ex: This is Table "Student," each row consists of "Student" data, derived from the Student Class.
-        public DbSet<Enrollment> Enrollments { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Instructor> Instructors { get; set; }
+        public DbSet<Student> Students { get; set; } // Ex: This is Table "Student," each row consists of "Student" data, derived from the Student Class.
+        public DbSet<OfficeAssignment> OfficeAssignments { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>(); // Removes pluralizing convention of Table names.
+
+            modelBuilder.Entity<Course>()
+                .HasMany(c => c.Instructors).WithMany(i => i.Courses)
+                .Map(t => t.MapLeftKey("CourseID")
+                    .MapRightKey("InstructorID") // If this wasn't explicitly stated, the column name would be InstructorInstructorID. This is why it's best to just name keys "ID".
+                    .ToTable("CourseInstructor"));
+
         }
     }
 }
