@@ -8,6 +8,12 @@ namespace ContosoUniversity.DAL
 {
     public class SchoolContext : DbContext //SchoolContext is our DB.
     {
+        public SchoolContext()
+        {
+            // Uncomment to turn off Lazy Lodaing
+            //this.Configuration.LazyLoadingEnabled = false;
+        }
+
         // Each DbSet corresponds to a Table within the DB.
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Departments { get; set; }
