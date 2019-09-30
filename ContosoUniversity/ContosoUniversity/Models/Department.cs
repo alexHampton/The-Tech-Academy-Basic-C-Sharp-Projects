@@ -25,6 +25,9 @@ namespace ContosoUniversity.Models
 
         public int? InstructorID { get; set; }
 
+        [Timestamp] // Specifies that this will be included in the Where clause of Update and Delete commands.
+        public byte[] RowVersion { get; set; }
+
         public virtual Instructor Administrator { get; set; }
         public virtual ICollection<Course> Courses { get; set; }
     }

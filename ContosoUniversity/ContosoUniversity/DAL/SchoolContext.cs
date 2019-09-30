@@ -10,7 +10,7 @@ namespace ContosoUniversity.DAL
     {
         public SchoolContext()
         {
-            // Uncomment to turn off Lazy Lodaing
+            // Uncomment to turn off Lazy Loding
             //this.Configuration.LazyLoadingEnabled = false;
         }
 
@@ -32,6 +32,7 @@ namespace ContosoUniversity.DAL
                 .Map(t => t.MapLeftKey("CourseID")
                     .MapRightKey("InstructorID") // If this wasn't explicitly stated, the column name would be InstructorInstructorID. This is why it's best to just name keys "ID".
                     .ToTable("CourseInstructor"));
+            modelBuilder.Entity<Department>().MapToStoredProcedures(); // Instructs EF to use stored procedures for Insert, Update, and Delete ops on the Department entity.
 
         }
     }
