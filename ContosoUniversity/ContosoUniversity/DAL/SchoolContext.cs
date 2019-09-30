@@ -18,6 +18,7 @@ namespace ContosoUniversity.DAL
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
+        public DbSet<Person> People { get; set; } // Table-per-hierarchy (TPH) Inheritance
         public DbSet<Instructor> Instructors { get; set; }
         public DbSet<Student> Students { get; set; } // Ex: This is Table "Student," each row consists of "Student" data, derived from the Student Class.
         public DbSet<OfficeAssignment> OfficeAssignments { get; set; }
