@@ -5,3 +5,4 @@ Table of Contents
 =================
 * [Car Insurance Qualifications](https://github.com/alexHampton/The-Tech-Academy-Basic-C-Sharp-Projects/tree/master/CarInsuranceQualifications) | Basic Console App
 * [Contoso University](https://github.com/alexHampton/The-Tech-Academy-Basic-C-Sharp-Projects/tree/master/ContosoUniversity) | Microsoft tutorial on using Entity Framework Code-first.
+* [Coding Problems](https://github.com/alexHampton/The-Tech-Academy-Basic-C-Sharp-Projects/tree/master/CodingProblems) | Various solutions to coding problems, such as FizzBuzz.
